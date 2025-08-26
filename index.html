@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>BRS Showcase</title>
+
+  <meta name="description" content="Clean, mobile‑first showcase website. Replace images/text easily." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{
+
+      --bg:#0b0d12; --card:#11141b; --text:#e8ecf2; --muted:#a7b1c2; --brand:#6ee7ff; --accent:#7c4dff; --ring:rgba(110,231,255,.35);
+
+      --radius:18px; --pad:16px; --max:1160px;
+
+    }
+
+    *{box-sizing:border-box}html,body{height:100%}
+
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 600px at 10% -10%,rgba(124,77,255,.15),transparent),radial-gradient(1200px 600px at 90% 10%,rgba(110,231,255,.12),transparent),var(--bg);color:var(--text);line-height:1.6}
+
+    a{color:inherit;text-decoration:none}
+
+    img{max-width:100%;display:block;border-radius:calc(var(--radius) - 6px)}
+
+    .container{width:min(100% - 2*var(--pad), var(--max));margin-inline:auto}
+
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#001018;font-weight:700;box-shadow:0 6px 24px rgba(84,197,255,.25);border:0;cursor:pointer}
+
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.12)}
+
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(to bottom,rgba(11,13,18,.9),rgba(11,13,18,.55),transparent)}
+
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad)}
+
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+
+    .brand-logo{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#001018;font-weight:900}
+
+    .links{display:flex;gap:18px}
+
+    .links a{opacity:.85}
+
+    .links a:hover{opacity:1}/* Hero */
+
+.hero{padding:64px 0 36px}
+
+.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+
+.badge{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:12px}
+
+h1{font-size:clamp(32px,4.5vw,56px);line-height:1.1;margin:14px 0}
+
+p.lead{font-size:clamp(15px,2.2vw,18px);color:var(--muted);max-width:60ch}
+
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+
+.hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);padding:14px;border-radius:var(--radius);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+
+/* Sections */
+
+section{padding:40px 0}
+
+.section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+
+.section-title h2{margin:0;font-size:clamp(22px,3.2vw,32px)}
+
+.grid{display:grid;gap:18px}
+
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+
+@media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+
+.card{background:var(--card);border:1px solid rgba(255,255,255,.08);padding:16px;border-radius:var(--radius)}
+
+.card h3{margin:10px 0 6px}
+
+.pill{display:inline-flex;gap:8px;align-items:center;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(110,231,255,.08);border:1px solid var(--ring);color:var(--brand);font-weight:600}
+
+/* Gallery */
+
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+
+.gallery img{aspect-ratio:16/10;object-fit:cover}
+
+@media (max-width:900px){.gallery{grid-template-columns:1fr}}
+
+/* Testimonials slider */
+
+.slider{position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
+
+.slides{display:flex;transition:transform .5s ease}
+
+.slide{min-width:100%;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
+
+.slide p{color:var(--muted)}
+
+.dots{display:flex;gap:6px;justify-content:center;margin-top:10px}
+
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer}
+
+.dot.active{background:var(--brand)}
+
+/* Footer */
+
+footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);margin-top:40px}
+
+.small{font-size:12px}
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <nav class="nav container">
+
+      <a class="brand" href="#top"><span class="brand-logo">B</span> BRS Showcase</a>
+
+      <div class="links">
+
+        <a href="#features">Features</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#pricing">Pricing</a>
+
+        <a href="#faq">FAQ</a>
+
+        <a href="#contact" class="pill">Contact</a>
+
+      </div>
+
+    </nav>
+
+  </header>  <main id="top" class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-inner">
+
+        <div>
+
+          <span class="badge">✨ New: Version 1.0 released</span>
+
+          <h1>Showcase your app or service with a <span style="background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">clean, modern</span> website.</h1>
+
+          <p class="lead">This one‑file template is mobile‑first, blazing fast, and easy to edit. Replace text and image URLs and deploy anywhere (Netlify, Vercel, GitHub Pages).</p>
+
+          <div class="cta">
+
+            <a class="btn" href="#contact">Get Started</a>
+
+            <a class="btn ghost" href="#gallery">Preview Screens</a>
+
+          </div>
+
+          <div class="hero-card" style="margin-top:14px">
+
+            <strong>Heads‑up:</strong> Replace all image links with your own. Edit texts directly in HTML.
+
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <img src="https://images.unsplash.com/photo-1555421689-43cad7100751?q=80&w=1600&auto=format&fit=crop" alt="Dashboard preview"/>
+
+        </div>
+
+      </div>
+
+    </section><!-- FEATURES -->
+
+<section id="features">
+
+  <div class="section-title">
+
+    <h2>Why people choose <span class="pill">BRS Showcase</span></h2>
+
+  </div>
+
+  <div class="grid cols-3">
+
+    <div class="card"><h3>Mobile‑First</h3><p class="muted">Looks great on phones. Responsive grid & typography.</p></div>
+
+    <div class="card"><h3>One File</h3><p>Edit text & images in a single HTML file. Zero build tools.</p></div>
+
+    <div class="card"><h3>Fast Deploy</h3><p>Host on Netlify/Vercel/GitHub Pages in minutes.</p></div>
+
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+  <div class="section-title"><h2>Product Gallery</h2></div>
+
+  <div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="Laptop code"/>
+
+    <img src="https://images.unsplash.com/photo-1522071901873-411886a10004?q=80&w=1600&auto=format&fit=crop" alt="Team"/>
+
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="Planning"/>
+
+    <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1600&auto=format&fit=crop" alt="Workspace"/>
+
+    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop" alt="Charts"/>
+
+    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop" alt="Mobile app"/>
+
+  </div>
+
+</section>
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+  <div class="section-title"><h2>Simple Pricing</h2></div>
+
+  <div class="grid cols-3">
+
+    <div class="card">
+
+      <h3>Free</h3>
+
+      <p class="muted">Good for testing</p>
+
+      <ul>
+
+        <li>1 project</li><li>Email support</li><li>Community access</li>
+
+      </ul>
+
+      <a class="btn ghost" href="#contact">Choose</a>
+
+    </div>
+
+    <div class="card" style="outline:2px solid var(--ring)">
+
+      <h3>Pro</h3>
+
+      <p class="muted">Best for creators</p>
+
+      <ul>
+
+        <li>Unlimited projects</li><li>Custom domain</li><li>Priority support</li>
+
+      </ul>
+
+      <a class="btn" href="#contact">Choose</a>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Business</h3>
+
+      <p class="muted">For teams</p>
+
+      <ul>
+
+        <li>SSO access</li><li>Analytics</li><li>Dedicated support</li>
+
+      </ul>
+
+      <a class="btn ghost" href="#contact">Choose</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section id="testimonials">
+
+  <div class="section-title"><h2>Loved by users</h2></div>
+
+  <div class="slider" aria-label="Testimonials">
+
+    <div class="slides" id="slides">
+
+      <div class="slide">
+
+        <h3>“Perfect starter.”</h3>
+
+        <p>Got my site live in one hour. Clean and easy to edit. — Ravi</p>
+
+      </div>
+
+      <div class="slide">
+
+        <h3>“Looks premium.”</h3>
+
+        <p>Clients loved the modern style and fast loading. — Keerthi</p>
+
+      </div>
+
+      <div class="slide">
+
+        <h3>“Zero headache.”</h3>
+
+        <p>No tooling or build steps. Just one HTML file. — Arjun</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="dots" id="dots" aria-hidden="true"></div>
+
+</section>
+
+<!-- FAQ -->
+
+<section id="faq">
+
+  <div class="section-title"><h2>FAQ</h2></div>
+
+  <div class="grid cols-2">
+
+    <div class="card"><h3>How do I change images?</h3><p>Find the <code>&lt;img src="..."&gt;</code> URLs and paste yours. Use JPG/PNG or WebP.</p></div>
+
+    <div class="card"><h3>How do I edit text?</h3><p>Update the HTML text directly. Search for the section titles.</p></div>
+
+    <div class="card"><h3>How do I deploy?</h3><p>Drag & drop this file to Netlify, Vercel, or GitHub Pages.</p></div>
+
+    <div class="card"><h3>Can I add pages?</h3><p>Duplicate this file and link via the nav, or use anchors.</p></div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="section-title"><h2>Contact</h2></div>
+
+  <div class="grid cols-2">
+
+    <form class="card" onsubmit="event.preventDefault(); alert('Thanks! I will contact you soon.');">
+
+      <label>Name<br><input required type="text" placeholder="Your name" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:#0e1117;color:var(--text)"></label>
+
+      <br>
+
+      <label>Email<br><input required type="email" placeholder="your@email.com" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:#0e1117;color:var(--text)"></label>
+
+      <br>
+
+      <label>Message<br><textarea required rows="4" placeholder="Tell me about your project" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:#0e1117;color:var(--text)"></textarea></label>
+
+      <br>
+
+      <button class="btn" type="submit">Send</button>
+
+    </form>
+
+    <div class="card">
+
+      <h3>Reach me</h3>
+
+      <p>WhatsApp: +91 9640688367<br>Email:ravitejakusumuru123@gmai.com</p>
+
+      <p class="small">Replace contact info with yours. Integrate real forms later (e.g., Formspree, Netlify Forms).</p>
+
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop" alt="Contact"/>
+
+    </div>
+
+  </div>
+
+</section>
+
+  </main>  <footer>
+
+    <div class="container">
+
+      <div class="grid cols-3">
+
+        <div><strong>BRS Showcase</strong><p class="small">© <span id="y"></span> BRS Enterprises. All rights reserved.</p></div>
+
+        <div><p class="small">Built with a single HTML file. Edit and reuse freely.</p></div>
+
+        <div style="text-align:right"><a class="pill" href="#top">Back to top ↑</a></div>
+
+      </div>
+
+    </div>
+
+  </footer>  <script>
+
+    // Testimonials slider (auto)
+
+    const slides = document.getElementById('slides');
+
+    const dots = document.getElementById('dots');
+
+    const count = slides.children.length;
+
+    let idx = 0; for(let i=0;i<count;i++){ const d=document.createElement('span'); d.className='dot'+(i===0?' active':''); d.onclick=()=>go(i); dots.appendChild(d);} 
+
+    function go(n){ idx=n; slides.style.transform=`translateX(-${100*idx}%)`; [...dots.children].forEach((el,i)=>el.classList.toggle('active',i===idx)); }
+
+    setInterval(()=>go((idx+1)%count), 3500);
+
+    // year
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+  </script></body>
+
+</html>
